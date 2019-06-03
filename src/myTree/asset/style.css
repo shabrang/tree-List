@@ -1,0 +1,16 @@
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+ul {
+    list-style: none;
+}
+
+[class*='hide']  {
+    display: none;
+}
+
+[class*='show'] {
+    display: block;
+}
