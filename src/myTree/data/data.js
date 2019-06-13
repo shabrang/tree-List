@@ -15,7 +15,10 @@ export const data = [
   {
     id: 3, title: 'c', children: [
       { id: 8, title: 'c_1', children: [] },
-      { id: 9, title: 'c_2', children: [] }
+      { id: 9, title: 'c_2', children: [
+          { id: 10, title: 'c_2_1', children: [] },
+          { id: 11, title: 'c_2_2', children: [] }
+        ] }
     ]
   },
 

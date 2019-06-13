@@ -6,24 +6,26 @@ import './asset/_init.scss'
 class Sample extends Component {
 
   state = {
-    selected: [3, 4, 7]
+    selected: [1, 2],
+    results: []
   }
 
   render () {
     return (
       <div className='container'>
-
         <MyTree
           className={''}
           style={{}}
           header="Tree List"
           data={data}
-          disabled={[3,7]}
+          disabled={[]}
           selected={this.state.selected}
-          activated={[1,6]}
-          onSelected={(selected) => this.setState({ selected:selected })}
+          result={this.state.result}
+          activated={[1, 6, 3, 9]}
+          onSelected={(selected, results) => this.setState({ selected: selected,results })}
           iconMin={<i className="far fa-minus-square "/>}
           iconPlus={<i className="far fa-plus-square "/>}
+          renderItem={(item)=><b onClick={()=> console.log(item)}>{item.title}</b>}
         />
 
         <button onClick={() => console.log(this.state)} className='btn btn-danger'>report</button>
