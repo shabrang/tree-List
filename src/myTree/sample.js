@@ -6,7 +6,7 @@ import './asset/_init.scss'
 class Sample extends Component {
 
   state = {
-    selected: [1, 2],
+    selected: [],
     results: []
   }
 
@@ -25,7 +25,7 @@ class Sample extends Component {
           onSelected={(selected, results) => this.setState({ selected: selected,results })}
           iconMin={<i className="far fa-minus-square "/>}
           iconPlus={<i className="far fa-plus-square "/>}
-          renderItem={(item)=><b onClick={()=> console.log(item)}>{item.title}</b>}
+          renderItem={(item)=><b onClick={()=> console.log(item)}>{item.title} ({item.id})</b>}
         />
 
         <button onClick={() => console.log(this.state)} className='btn btn-danger'>report</button>

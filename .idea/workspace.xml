@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c54ccbed-35b9-4281-a111-5c26ab719798" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myTree/data/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/myTree/data/data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/myTree/myTree.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/myTree/myTree.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/myTree/sample.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/myTree/sample.js" afterDir="false" />
     </list>
@@ -21,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myTree/sample.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state relative-caret-position="192">
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -33,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/myTree/myTree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+            <state relative-caret-position="235">
+              <caret line="214" column="17" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -43,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/myTree/data/data.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
-              <caret line="6" column="49" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="49" />
+              <caret line="6" column="49" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -73,6 +73,11 @@
       <find>onSelected</find>
       <find>test</find>
       <find>changeSelected</find>
+      <find>indeterminate</find>
+      <find>splice(</find>
+      <find>check</find>
+      <find>parentAutoCheck</find>
+      <find>indete</find>
     </findStrings>
     <replaceStrings>
       <replace>reportSelected</replace>
@@ -107,7 +112,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,6 +134,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -176,15 +181,18 @@
       <workItem from="1559540599858" duration="23397000" />
       <workItem from="1560134423871" duration="26207000" />
       <workItem from="1560231101113" duration="23117000" />
-      <workItem from="1560320708162" duration="35841000" />
+      <workItem from="1560320708162" duration="36863000" />
+      <workItem from="1560579723793" duration="14164000" />
+      <workItem from="1560662819819" duration="734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126151000" />
+    <option name="totallyTimeSpent" value="142071000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1600" height="875" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24984147" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -233,34 +241,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myTree/data/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="49" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/myTree/sample2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="28" column="95" lean-forward="true" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myTree/sample2.js" />
     <entry file="file://$PROJECT_DIR$/src/myTree/sample.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        <state relative-caret-position="192">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/myTree/data/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="49" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/myTree/myTree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        <state relative-caret-position="235">
+          <caret line="214" column="17" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
         </state>
       </provider>
     </entry>

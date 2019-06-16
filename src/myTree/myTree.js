@@ -41,6 +41,7 @@ class MyTree extends Component {
         item.disabled = disabled.indexOf(item.id) > -1
         item.selected = selected.indexOf(item.id) > -1
         item.activation = activated.indexOf(item.id) > -1
+        item.indeterminate = false
 
         if (item.children) {
           item.children = this.initialize(item.children, disabled, selected, activated)
@@ -82,11 +83,16 @@ class MyTree extends Component {
 
     let { data, selected } = this.state
 
-    this.toggleItemSelect(item, selected)
+    console.log('selected', selected)
+    selected = this.toggleItemSelect(item, selected)
 
-    this.childAutoCheck(item, selected)
+    console.log('toggleItemSelect', selected)
 
-    this.parentAutoCheck(data, item)
+    selected = this.childAutoCheck(item, selected)
+    console.log('childAutoCheck', selected, data)
+
+    selected = this.parentAutoCheck(data, item, selected)
+    console.log('parentAutoCheck', selected)
 
     this.setState({ selected }, this.setData)
   }
@@ -94,7 +100,7 @@ class MyTree extends Component {
   toggleItemSelect = (item, selected) => {
     const index = selected.indexOf(item.id)
     if (index > -1) {
-      selected.splice(item.id,1)
+      selected.splice(index, 1)
     } else {
       selected.push(item.id)
     }
@@ -111,7 +117,7 @@ class MyTree extends Component {
   uncheckAllChild = (item, selected) => {
     const index = selected.indexOf(item.id)
     if (index > -1) {
-      selected.splice(item.id, 1)
+      selected.splice(index, 1)
     }
     return selected
   }
@@ -121,20 +127,21 @@ class MyTree extends Component {
       item.children.map((_item) => {
         const index = selected.findIndex(selected => selected === item.id)
         if (index > -1) {
-          this.checkAllChild(_item, selected)
-          this.childAutoCheck(_item,selected)
-        } else if(index===-1) {
-          this.uncheckAllChild(_item, selected)
-          this.childAutoCheck(_item,selected)
+          selected = this.checkAllChild(_item, selected)
+          selected = this.childAutoCheck(_item, selected)
+        } else{
+          selected = this.uncheckAllChild(_item, selected)
+          selected = this.childAutoCheck(_item, selected)
         }
-
+        return selected
       })
     }
+    return selected
   }
 
-  parentAutoCheck = (source, item) => {
-    const { selected } = this.state
+  parentAutoCheck = (source, item, selected = []) => {
     let check = true
+
     let parent = this.findParent(source, item)
 
     if (parent) {
@@ -143,24 +150,33 @@ class MyTree extends Component {
 
       if (check) {
         selected.push(parent.id)
+        // this.setState({ data: [{...this.state.data, indeterminate: false }] })
       } else {
-        selected.splice(parent.id, 1)
+        let index = selected.indexOf(parent.id)
+        if(index > -1){
+          selected.splice(index, 1)
+        }
+        // this.setState({ data: [{...this.state.data, indeterminate: true }] })
       }
-
-      if (parent.children && parent.children[0] && parent.children[0].id)
-        this.parentAutoCheck(parent.children, item)
+        selected = this.parentAutoCheck(source, parent, selected)
     }
     return selected
   }
 
   findParent = (source, item) => {
+    let parent = undefined;
     for (let i = 0; i < source.length; i++) {
       const index = source[i].children.findIndex(child => child.id === item.id)
       if (index > -1) {
         return source[i]
       }
-      this.parentAutoCheck(source[i].children, item)
+      parent = this.findParent(source[i].children, item)
+      if(parent){
+        return parent
+      }
     }
+
+    return parent
   }
 
   checkAllChildSelected = (parent) => {
@@ -171,8 +187,7 @@ class MyTree extends Component {
       for (let i = 0; i < parent.children.length; i++) {
         const index = selected.findIndex(selected => selected === parent.children[i].id)
         if (index === -1) {
-          check = false
-          break
+          return  check = false
         }
       }
       return check
@@ -193,7 +208,12 @@ class MyTree extends Component {
                       {!item.activation ? (this.props.iconMin || '-') : (this.props.iconPlus || '+')}
                     </span> : <span className='mr-3' style={{ color: '#fff' }}>**</span>
               }
-              <input onChange={() => this.changeSelected(item)} type="checkbox" checked={item.selected}/>
+              <input
+                onChange={() => this.changeSelected(item)}
+                type="checkbox"
+                checked={item.selected}
+               // indeterminate={item.indeterminate ? 'true'  :  'false' }
+              />
               <span className='ml-1'>
                  {this.props.renderItem(item)}
                 </span>
@@ -207,7 +227,7 @@ class MyTree extends Component {
   }
 
   render () {
-    console.log(this.state.selected)
+    console.log(this.state)
     // console.log(this.state.selected)
     return (
       <div className='container text-center'>
